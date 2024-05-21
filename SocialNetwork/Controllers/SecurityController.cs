@@ -26,8 +26,9 @@ namespace SocialNetwork.Controllers
         {
             if (ModelState.IsValid)
             {
-                _service.SaveUserToDB(model);
-                return View();
+                //_service.SaveUserToDB(model);
+                model.Message = "User register successfully.";
+                return View(model);
             }
             return View(model);
 
