@@ -4,10 +4,13 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div>
+<body>
+    <div style="margin-left:500px;">
     <div>
-        @Html.ValidationSummary()
-    </div>
+       @Html.ValidationSummary()
+    </div>  
+        <fieldset style="width:300px;">
+        <legend>Register form</legend>
     @using (Html.BeginForm())
     {
         <table>
@@ -40,4 +43,9 @@
             </tr>
         </table>
     }
-</div>
+    </fieldset>
+    <div>
+        @Html.ActionLink("Redirect to Logon" , "Logon")
+    </div>
+    </div>
+</body>
