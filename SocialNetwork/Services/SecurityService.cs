@@ -6,7 +6,7 @@ namespace SocialNetwork.Services
 {
     public class SecurityService : ISecurityService
     {
-        private ApplicationDbContext _context = null;
+        private ApplicationDbContext _context;
         public SecurityService()
         {
            _context = new ApplicationDbContext();

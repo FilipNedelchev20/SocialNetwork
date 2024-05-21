@@ -7,7 +7,7 @@ namespace SocialNetwork.Controllers
 {
     public class SecurityController : Controller
     {
-        private ISecurityService _service = null;
+        private ISecurityService _service;
         public SecurityController(ISecurityService service)
         {
             _service = service;
@@ -24,8 +24,12 @@ namespace SocialNetwork.Controllers
         [HttpPost]
         public ActionResult Register(RegisterViewModel model)
         {
-            _service.SaveUserToDB(model);
-            return View();
+            if (ModelState.IsValid)
+            {
+                _service.SaveUserToDB(model);
+                return View();
+            }
+            return View(model);
 
         }
     }

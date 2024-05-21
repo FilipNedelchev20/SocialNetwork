@@ -5,6 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div>
+    <div>
+        @Html.ValidationSummary()
+    </div>
     @using (Html.BeginForm())
     {
         <table>

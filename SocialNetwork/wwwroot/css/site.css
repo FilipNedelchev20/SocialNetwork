@@ -1,18 +1,18 @@
-html {
-  font-size: 14px;
-}
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.field-validation-error{
+    color: #ff0000;
 }
-
-html {
-  position: relative;
-  min-height: 100%;
+.field-validation-valid{
+    display: none;
 }
-
-body {
-  margin-bottom: 60px;
+.input-validation-error{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+.validation-summary-errors{
+    font-weight: bold;
+    color: #ff0000;
+}
+.validation-summary-valid{
+    display: none;
 }
