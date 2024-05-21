@@ -11,6 +11,7 @@ namespace SocialNetwork.Controllers
         }
         public ActionResult Register()
         {
+
             return View();
 
         }
