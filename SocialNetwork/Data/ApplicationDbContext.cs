@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SocialNetwork.Models;
+using System.Configuration;
 
 namespace SocialNetwork.Data
 {
@@ -9,5 +11,7 @@ namespace SocialNetwork.Data
             : base(options)
         {
         }
+        
+        public DbSet<UserDetail> UserDetails { get; set; }
     }
 }
