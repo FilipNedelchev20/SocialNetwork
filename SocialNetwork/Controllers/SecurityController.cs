@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Localization;
 using SocialNetwork.Services;
 using SocialNetwork.ViewModels;
+using System.Web;
 
 namespace SocialNetwork.Controllers
 {
@@ -15,6 +16,23 @@ namespace SocialNetwork.Controllers
         public ActionResult Logon()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Logon(LogonVIewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (_service.IsValidUser(model))
+                {
+                    
+                    return RedirectToAction("HomePage", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Invalid username or password.");
+                }
+            }
+            return View(model);
         }
         public ActionResult Register()
         {

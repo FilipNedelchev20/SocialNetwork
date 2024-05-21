@@ -22,5 +22,18 @@ namespace SocialNetwork.Services
             _context.UserDetails.Add(userDetail);
             _context.SaveChanges();
         }
+        public bool IsValidUser(LogonVIewModel model) 
+        {
+            UserDetail user = new UserDetail();
+            user = _context.UserDetails.SingleOrDefault(c => c.Email.Equals(model.Username) && c.Password.Equals(model.Password));
+            if (user == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

@@ -1,8 +1,41 @@
-﻿
+﻿@model SocialNetwork.ViewModels.LogonVIewModel
 @{
     ViewData["Title"] = "Logon";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Logon</h1>
+<div>
+    <div style="margin-left:500px;">
+    <div>
+        @Html.ValidationSummary()
+    </div>
+    <fieldset style="width:300px;">
+        <legend>Login form</legend>
+    
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>@Html.LabelFor(c=> c.Username, "Username:")</td>
+                <td>@Html.TextBoxFor(c=>c.Username)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.Password, "Password:")</td>
+                <td>@Html.TextBoxFor(c => c.Password)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login"/>
+                    <input type="reset" value="Reset"/>
+                </td>
+            </tr>
+        </table>
+        
+    }
+    </fieldset>
+    <div style="margin-left:130px;">
+        @Html.ActionLink("SignUp", "Register")
+    </div>
+    </div>
+</div>
 
