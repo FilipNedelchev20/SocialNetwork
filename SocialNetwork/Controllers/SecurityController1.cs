@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Localization;
 
 namespace SocialNetwork.Controllers
 {
@@ -7,6 +8,11 @@ namespace SocialNetwork.Controllers
         public ActionResult Logon()
         {
             return View();
+        }
+        public ActionResult Register()
+        {
+            return View();
+
         }
     }
 }
